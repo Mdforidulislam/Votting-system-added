@@ -105,8 +105,9 @@ const Create = ({
     }, [contract, state, voting?._address, setDisable, getBallotDetails, getChoices, getVoters, getCurrentState]);
 
     return (
-        <Container>
-            <Box mt={4} pb={8} paddingX={6} >
+        <div style={{backgroundColor:'#010b2e'}}>
+        <Container style={{backgroundColor:'#010b2e'}}>
+            <Box paddingX={6} paddingY={8} >
                 {disable && (
                     <Box my={2}>
                         <Paper sx={{ padding: "0.6rem" }}>
@@ -116,17 +117,17 @@ const Create = ({
                         </Paper>
                     </Box>
                 )}
-                <Box my={4}>
+                <Box>
                     <Paper>
-                        <Box py={1}>
+                        <Box py={1} sx={{backgroundColor:'#FFF', width:'100%',height:'100%'}}>
                             <Typography variant="h4" fontWeight="bold" textAlign="center">
                                 Create Ballot
                             </Typography>
                         </Box>
                         <Divider />
-                        <Box margin={2} paddingY={2}>
+                        <Box  paddingY={2} sx={{backgroundColor:'#FFF', width:'100%',height:'100%'}}>
                             {isAlreadyCreated && <Alert severity="success">Ballot already created.</Alert>}
-                            <form onSubmit={onCreateBallot}>
+                            <form onSubmit={onCreateBallot} style={{padding:'50px'}}>
                                 <Box my={2}>
                                     <TextField
                                         value={ballot.name}
@@ -300,6 +301,8 @@ const Create = ({
                 )}
             </Box>
         </Container>
+        </div>
+
     );
 };
 

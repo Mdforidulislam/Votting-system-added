@@ -52,16 +52,17 @@ const Voting = ({
     }, [getChoices, getTotalVotes, checkIsVoter, getCurrentState, getVoters, ballot, contract]);
 
     return (
-        <Container style={{ height: '100vh' }}>
-            <Box py={4}>
-                <Paper>
-                    <Box py={1}>
+        <div style={{ backgroundColor:'#010b2e' }}>
+ <Container style={{ height: '100%'  }}>
+            <Box py={10} sx={{bacgroundColor:'#0C134F'}}>
+                <Paper p={6} sx={{paddingTop:'40px', bacgroundColor:'#FFF' , width:'100%',height:'100%'}}>
+                    <Box py={1} >
                         <Typography variant="h4" fontWeight="bold" textAlign="center">
                             Get Ballot
                         </Typography>
                     </Box>
                     <Divider />
-                    <Box margin={2} paddingY={2}>
+                    <Box  paddingY={6} p={3}  sx={{backgroundColor:"#FFF", width:'100%',height:'100%'}}>
                         <form onSubmit={getBallotDetails}>
                             <Box my={2}>
                                 <TextField
@@ -77,19 +78,19 @@ const Voting = ({
                             {ballot.name && ballot.address && ballot.proposal && (
                                 <Box my={2} display="flex" justifyContent="space-between">
                                     <Box>
-                                        <Typography variant="h6" fontWeight="bold">
+                                        <Typography color={'white'} variant="h6" fontWeight="bold">
                                             Ballot Name
                                         </Typography>
                                         <Typography>{ballot.name}</Typography>
                                     </Box>
                                     <Box>
-                                        <Typography variant="h6" fontWeight="bold">
+                                        <Typography color={'white'} variant="h6" fontWeight="bold">
                                             Proposal
                                         </Typography>
                                         <Typography>{ballot.proposal}</Typography>
                                     </Box>
                                     <Box>
-                                        <Typography variant="h6" fontWeight="bold">
+                                        <Typography color={'white'}  variant="h6" fontWeight="bold">
                                             Ballot Address
                                         </Typography>
                                         <Typography>{ballot.address}</Typography>
@@ -98,7 +99,7 @@ const Voting = ({
                             )}
 
                             <Box>
-                                <Button variant="contained" type="submit" fullWidth>
+                                <Button  variant="contained" type="submit" fullWidth>
                                     Get Ballot
                                 </Button>
                             </Box>
@@ -112,7 +113,7 @@ const Voting = ({
                     </Box>
                 </Paper>
                 {visible && isVoter && (
-                    <Paper>
+                    <Paper p={2}>
                         <Box py={1}>
                             <Typography variant="h4" fontWeight="bold" textAlign="center">
                                 Vote Now
@@ -182,6 +183,8 @@ const Voting = ({
                 )}
             </Box>
         </Container>
+        </div>
+       
     );
 };
 
