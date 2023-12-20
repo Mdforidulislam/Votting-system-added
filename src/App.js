@@ -18,6 +18,7 @@ import Appbar from "./components/Appbar";
 
 import "./App.css";
 import "react-toastify/dist/ReactToastify.css";
+import Footer from "./components/Footer";
 
 const App = () => {
     const [loading, setLoading] = useState(false);
@@ -167,7 +168,7 @@ const App = () => {
     }, [loadBlockchainData]);
 
     return (
-        <Box style={{ background: 'radial-gradient(circle, rgba(83,207,240,1) 12%, rgba(0,212,255,1) 43%, rgba(99,92,208,1) 80%)' }}>
+        <Box >
             <ToastContainer
                 position="top-right"
                 autoClose={5000}
@@ -181,6 +182,7 @@ const App = () => {
             />
             <Appbar />
             <Routes>
+
                 <Route path="/" element={<Home />} />
                 <Route
                     path="/ballot"
@@ -271,9 +273,11 @@ const App = () => {
                 <Route path="/team" element={<Team />} />
                 <Route path="/about" element={<About />} />
             </Routes>
+
             <Backdrop sx={{ color: "#fff", zIndex: (theme) => theme.zIndex.drawer + 1 }} open={loading}>
                 <CircularProgress color="inherit" />
             </Backdrop>
+            <Footer/>
         </Box>
     );
 };
