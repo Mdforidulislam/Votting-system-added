@@ -185,7 +185,7 @@ export default function Appbar() {
     );
 
     return (
-        <Box sx={{ flexGrow: 1 }}>
+        <Box sx={{ flexGrow: 1,backgroundColor:'#394867',width:'100%',height:'100%' }}>
             <AppBar position="relative">
                 <Toolbar>
                     <IconButton
@@ -221,7 +221,7 @@ export default function Appbar() {
                             sx={{
                                 padding: "8px", // Add padding
                                 '&:hover': {
-                                    backgroundColor: 'rgba(255, 255, 255, 0.1)', // Add hover color
+                                    backgroundColor: '#394867', // Add hover color
                                 }
                             }}
                         >
