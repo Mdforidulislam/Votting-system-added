@@ -1,5 +1,6 @@
 import {
   Box,
+  Button,
   Card,
   CardActionArea,
   CardMedia,
@@ -20,7 +21,7 @@ import VideoSection from "../components/Home/VideoSection";
 import Timing from "../components/Home/Timing";
 
 const Home = () => {
-    const [techonology, setTechno] = useState([]);
+  const [techonology, setTechno] = useState([]);
 
   useEffect(() => {
     fetch("/Technologoy.json")
@@ -41,7 +42,40 @@ const Home = () => {
               backgroundPosition: "center",
               backgroundSize: "cover",
             }}
-          ></Box>
+          >
+            <Stack
+              direction={"row"}
+              justifyContent={"center"}
+              alignItems={"center"}
+              paddingTop={'100px'}
+            >
+              <Box
+                sx={{
+                    width: '500px',
+                    height: '500px',
+                    backgroundColor: '#010b2e',
+                    padding: '20px',
+                    borderRadius: '8px',
+                    color: '#fff',
+                }}
+              >
+                <Typography variant="h5" mb={2}>
+                  Lorem ipsum dolor sit,
+                </Typography>
+                <Typography variant="h4" mb={2}>
+                  Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                  Eligendi, placeat.
+                </Typography>
+                <Typography variant="body2" mb={2}>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab
+                  laborum ipsa porro explicabo at nesciunt aperiam!
+                </Typography>
+                <Button variant="contained">See more</Button>
+              </Box>
+              <Box sx={{ width: "400px", height: "300px" }}></Box>
+              <Box sx={{ width: "400px", height: "300px" }}></Box>
+            </Stack>
+          </Box>
         </Stack>
       </Stack>
       <ShareContent>
@@ -61,7 +95,7 @@ const Home = () => {
         <Stack>
           <VideoSection></VideoSection>
         </Stack>
-        <Stack sx={{paddingTop:'100px'}}>
+        <Stack sx={{ paddingTop: "100px" }}>
           {/* Slider of client Reviewe */}
           <Box>
             <div className="max-w-xl mb-10 md:mx-auto sm:text-center lg:max-w-2xl md:mb-12">
@@ -90,7 +124,7 @@ const Home = () => {
                     />
                   </svg>
                 </span>{" "}
-                INCLUDE LANGUAGE AND TECHGNOLOGY 
+                INCLUDE LANGUAGE AND TECHGNOLOGY
               </h2>
               <p className="text-base text-white md:text-lg">
                 Sed ut perspiciatis unde omnis iste natus error sit voluptatem
@@ -128,41 +162,41 @@ const Home = () => {
             </Box>
           </Stack>
         </Stack>
-        <Stack sx={{marginBottom:'50px'}}>
+        <Stack sx={{ marginBottom: "50px" }}>
           {/* According section  */}
           <div className="max-w-xl mb-10 md:mx-auto sm:text-center lg:max-w-2xl md:mb-12">
-              <h2 className="max-w-lg mb-6 font-sans text-3xl font-bold leading-none tracking-tight text-[#ffffff] sm:text-4xl md:mx-auto">
-                <span className="relative inline-block">
-                  <svg
-                    viewBox="0 0 52 24"
-                    fill="currentColor"
-                    className="absolute top-0 left-0 z-0 hidden w-32 -mt-8 -ml-20 text-blue-gray-100 lg:w-32 lg:-ml-28 lg:-mt-10 sm:block"
-                  >
-                    <defs>
-                      <pattern
-                        id="1d4040f3-9f3e-4ac7-b117-7d4009658ced"
-                        x="0"
-                        y="0"
-                        width=".135"
-                        height=".30"
-                      >
-                        <circle cx="1" cy="1" r=".7" />
-                      </pattern>
-                    </defs>
-                    <rect
-                      fill="url(#1d4040f3-9f3e-4ac7-b117-7d4009658ced)"
-                      width="52"
-                      height="24"
-                    />
-                  </svg>
-                </span>{" "}
-                All the question You can find out 
-              </h2>
-              <p className="text-base text-white md:text-lg">
-                Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-                accusantium doloremque rem aperiam, eaque ipsa quae.
-              </p>
-            </div>
+            <h2 className="max-w-lg mb-6 font-sans text-3xl font-bold leading-none tracking-tight text-[#ffffff] sm:text-4xl md:mx-auto">
+              <span className="relative inline-block">
+                <svg
+                  viewBox="0 0 52 24"
+                  fill="currentColor"
+                  className="absolute top-0 left-0 z-0 hidden w-32 -mt-8 -ml-20 text-blue-gray-100 lg:w-32 lg:-ml-28 lg:-mt-10 sm:block"
+                >
+                  <defs>
+                    <pattern
+                      id="1d4040f3-9f3e-4ac7-b117-7d4009658ced"
+                      x="0"
+                      y="0"
+                      width=".135"
+                      height=".30"
+                    >
+                      <circle cx="1" cy="1" r=".7" />
+                    </pattern>
+                  </defs>
+                  <rect
+                    fill="url(#1d4040f3-9f3e-4ac7-b117-7d4009658ced)"
+                    width="52"
+                    height="24"
+                  />
+                </svg>
+              </span>{" "}
+              All the question You can find out
+            </h2>
+            <p className="text-base text-white md:text-lg">
+              Sed ut perspiciatis unde omnis iste natus error sit voluptatem
+              accusantium doloremque rem aperiam, eaque ipsa quae.
+            </p>
+          </div>
           <Box className="max-w-screen-2xl mx-auto">
             <ControlledAccordions
               style={{
