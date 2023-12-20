@@ -54,14 +54,7 @@ const Home = () => {
           sx={{ backgroundColor: "#010b2e", width: "100%", height: "100%" }}
         >
           {/* Timimg section */}
-          <Stack
-            direction={"row"}
-            spacing={2}
-            p={2}
-            justifyContent={"space-between"}
-            alignItems={"center"}
-            sx={{maxWidth:'max-content'}}
-          >
+          <Stack>
             <Timing></Timing>
           </Stack>
         </Stack>

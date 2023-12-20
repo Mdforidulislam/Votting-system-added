@@ -186,7 +186,7 @@ export default function Appbar() {
 
     return (
         <Box sx={{ flexGrow: 1,backgroundColor:'#394867',width:'100%',height:'100%' }}>
-            <AppBar position="relative">
+            <AppBar position="relative" sx={{backgroundColor:'#0C134F',width:"100%",height:'100%'}}>
                 <Toolbar>
                     <IconButton
                         size="large"
@@ -210,10 +210,22 @@ export default function Appbar() {
                         <StyledInputBase placeholder="Search…" inputProps={{ "aria-label": "search" }} />
                     </Search> */}
 
-
-
-
                     <Box sx={{ display: "flex", justifyContent: "center", flexGrow: 12 }}>
+                    <Button
+                            size="large"
+                            aria-label="Create Ballot"
+                            color="inherit"
+                            sx={{
+                                padding: "8px", // Add padding
+                                '&:hover': {
+                                    backgroundColor: '#394867', // Add hover color
+                                }
+                            }}
+                        >
+                            <NavLink to="/" style={{ color: "white" }}>
+                                Home
+                            </NavLink>
+                        </Button>
                         <Button
                             size="large"
                             aria-label="Create Ballot"
@@ -226,7 +238,7 @@ export default function Appbar() {
                             }}
                         >
                             <NavLink to="/ballot" style={{ color: "white" }}>
-                                Create Ballot
+                            Election
                             </NavLink>
                         </Button>
                         <Button
@@ -260,7 +272,7 @@ export default function Appbar() {
                             </NavLink>
                         </Button>
 
-                        <Button
+                        {/* <Button
                             size="large"
                             aria-label="Team"
                             color="inherit"
@@ -274,7 +286,7 @@ export default function Appbar() {
                             <NavLink to="/team" style={{ color: "white" }}>
                                 Team
                             </NavLink>
-                        </Button>
+                        </Button> */}
 
                         <Button
                             size="large"
@@ -297,7 +309,7 @@ export default function Appbar() {
 
 
                     <Box sx={{ flexGrow: 1 }} />
-                    <Box sx={{ display: { xs: "none", md: "flex" } }}>
+                    {/* <Box sx={{ display: { xs: "none", md: "flex" } }}>
                         <IconButton size="large" aria-label="new mails" color="inherit">
                             <Badge badgeContent={0} color="error">
                                 <MailIcon />
@@ -319,8 +331,8 @@ export default function Appbar() {
                         >
                             <AccountCircle />
                         </IconButton>
-                    </Box>
-                    <Box sx={{ display: { xs: "flex", md: "none" } }}>
+                    </Box> */}
+                    <Box  sx={{ display: { xs: "flex", md: "none" } }}>
                         <IconButton
                             size="large"
                             aria-label="show more"
@@ -336,7 +348,6 @@ export default function Appbar() {
             </AppBar>
             {renderMobileMenu}
             {renderMenu}
-
             <Drawer anchor="left" open={open} onClose={() => setOpen(!open)}>
                 <Box sx={{ width: "300px", marginTop: "2rem" }}>
                     <Box mb={3}>

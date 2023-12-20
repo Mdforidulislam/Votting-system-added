@@ -168,7 +168,7 @@ const App = () => {
     }, [loadBlockchainData]);
 
     return (
-        <Box >
+        <Box flexDirection={'column' } alignItems={'end'}>
             <ToastContainer
                 position="top-right"
                 autoClose={5000}
@@ -277,7 +277,8 @@ const App = () => {
             <Backdrop sx={{ color: "#fff", zIndex: (theme) => theme.zIndex.drawer + 1 }} open={loading}>
                 <CircularProgress color="inherit" />
             </Backdrop>
-            <Footer/>
+        
+           <Footer className=" flex items-end h-full w-full" />
         </Box>
     );
 };
